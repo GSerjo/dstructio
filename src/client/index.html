@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dstruct.io Open Source Edition</title>
+    <meta name="description" content="Online multiplayer .io game featuring bombs, powerups and destruction. Ready? Go!">
+    <meta name="keywords" content="io,game,.io,bomberman,clone,HTML5,online,multiplayer,bomb">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <link rel="stylesheet" href="/css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+    <div id="gameAreaWrapper" style="display:none;">
+        <div id="leaderboard"></div>
+        <div id="iconarea"><img src="/assets/dsicon200.png"></div>
+        <div id="player"></div>
+        <div id="gameCanvas"></div>
+        <div id="exitpopup" class="border1 border2" style="display:none;">
+            <p align='center'>Do you want to exit?<br /><br />
+                <button id="exityes" class="button button1">Yes</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="exitno" class="button button1">No</button>
+            </p>
+        </div>
+    </div>
+
+    <div id="startMenuWrapper" style="display:block;" width="90%" height="90%">
+        <div id="menuTitle" align="center"><img src="/assets/dstitle.png"><br /><br />
+            <a href="/instructions.html">CLICK HERE FOR INSTRUCTIONS</a>
+        </div>
+        <div id="startMenu" class="border1 border2">
+            <p style='font-size:12px'>This page may take a few seconds to load the first time</p>
+            <input type="text" tabindex="0" autofocus placeholder="Enter your name here" id="playerNameInput"  maxlength="20"/>
+            <b class="input-error">Valid Characters: a-z A-Z 0-9 , . _ : ' ! ^ * ( ) = -<br />
+            Maximum length: 20 characters (including spaces)</b>
+            <br />
+            <button id="startButton">Play</button>
+        </div>
+        <div id="instructions" style="display:none;">
+            <b>Desktop Controls</b><hr />
+            <b>Move</b> - Arrow keys<br />
+            <b>Bomb</b> - Space bar<br />
+            <br /><br />
+            <a href="/glossary.html">Power-up item reference</a>
+        </div>
+    </div>
+    <div id="postGameWrapper" style="display:none;" class="modal">
+        <div class="modal-content">
+            <div id="deadReason"></div>
+            <hr />
+            <button id="respawnBtn" class="close">Respawn</button>
+        </div>
+    </div>
+    <div id="loadingWrapper" style="display:none;" class="modal">
+        <div id="loadingText" class="modal-content"></div>
+    </div>
+    <div id="orientwarning" style="display:none;">
+        <p>This game must be played in landscape orientation.
+        Please turn your device 90 degrees.</p>
+    </div>
+
+    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="./lib/phaser.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+        integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+        crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+
+</body>
+</html>
