@@ -11,7 +11,8 @@ Other features include:
 * Client-side prediction for smooth gameplay over high-latency connections.
 * Supports multiple servers, or 'rooms'.
 * Each player only sees local updates.
-* and much more!
+
+...and much more!
 
 ## Local deployment instructions:
 
@@ -46,19 +47,23 @@ The process for setting it up on DigitalOcean is as follows:
 
    https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-16-04
 4. Checkout the code:
+
    ```
    git clone git@github.com:stevepryde/dstructio.git
    ```
 5. Install gulp:
+
    ```
    sudo npm install -g gulp
    ```
 6. Install NPM modules:
+
    ```
    cd dstructio
    npm install
    ```
 7. Build the project:
+
    ```
    ./deploy.sh
    ```
@@ -71,7 +76,8 @@ The process for setting it up on DigitalOcean is as follows:
      * bin/server/server.js
    * The reverse proxy should be set up so that accessing your droplet's IP address at port 80 takes you to router.js.
    * Make sure that the serverlist.json points to where your server.js script is running.
-10. Disable swap
+10. Disable swap:
+
     ```
     sudo swapon --show
     sudo swapoff /swapfile
